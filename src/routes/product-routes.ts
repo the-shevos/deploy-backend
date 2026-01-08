@@ -10,9 +10,11 @@ import { upload } from "../middleware/multer";
 
 const router = express.Router();
 
+// Public routes
 router.get("/", getProducts);
 router.get("/:id", getProductById);
 
+// Admin routes (with image upload)
 router.post("/", upload.array("images", 5), createProduct);
 router.put("/:id", upload.array("images", 5), updateProduct);
 router.delete("/:id", deleteProduct);

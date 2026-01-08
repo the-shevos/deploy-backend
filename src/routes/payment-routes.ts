@@ -4,7 +4,7 @@ import Stripe from "stripe";
 const router = express.Router();
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
-  apiVersion: "2022-11-15",
+  apiVersion: "2022-11-15" as any,
 });
 
 router.post("/create-payment-intent", async (req, res) => {

@@ -167,7 +167,7 @@ router.patch("/block-user/:id", async (req, res) => {
       { new: true }
     );
     res.json({ success: true, message: "User blocked", user });
-  } catch (err) {
+  } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
 });
@@ -180,7 +180,7 @@ router.patch("/unblock-user/:id", async (req, res) => {
       { new: true }
     );
     res.json({ success: true, message: "User unblocked", user });
-  } catch (err) {
+  } catch (err: any) {
     res.status(500).json({ success: false, message: err.message });
   }
 });
